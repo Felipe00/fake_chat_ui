@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:fake_chat_ui/core/routes/client_routes.dart';
 
 import 'no_connection_with_server_exception.dart';
 
@@ -13,7 +12,7 @@ class BaseException implements Exception, DioError {
   BaseException({this.cause, this.longCause});
 
   @override
-  var error;
+  dynamic error;
 
   @override
   RequestOptions requestOptions = RequestOptions(path: '');
