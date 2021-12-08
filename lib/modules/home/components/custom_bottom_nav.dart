@@ -21,7 +21,7 @@ class CustomBottomNav extends StatelessWidget {
           unselectedItemColor: Colors.grey,
           showUnselectedLabels: false,
           onTap: (id) {
-            onTap(id);
+            onTap.call(id);
             if (id == 0) {
               Modular.to.navigate(FeedPage.routeName);
             } else if (id == 1) {

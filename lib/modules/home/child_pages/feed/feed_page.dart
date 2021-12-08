@@ -9,7 +9,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rx_notifier/rx_notifier.dart';
 
 class FeedPage extends StatelessWidget {
-  static const routeName = 'feed/';
+  static const routeName = '/home/feed/';
   FeedPage({Key? key}) : super(key: key);
 
   final FeedController _controller = Modular.get();

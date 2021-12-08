@@ -4,14 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rx_notifier/rx_notifier.dart';
 
-class HomePage extends StatelessWidget {
-  static const routeName = '/home/';
-  HomePage({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
-  final HomeController _controller = Modular.get();
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends ModularState<HomePage, HomeController> {
 
   @override
   Widget build(BuildContext context) {
+    controller.changeBottomNavIndex(newIndex: 0);
     return Scaffold(
       bottomNavigationBar: _bottomNav(),
       body: RouterOutlet(),
@@ -20,8 +24,8 @@ class HomePage extends StatelessWidget {
 
   Widget _bottomNav() => RxBuilder(
         builder: (_) => CustomBottomNav(
-          currentIndex: _controller.bottomNavIndex.value,
-          onTap: (index) => _controller.changeBottomNavIndex(newIndex: index),
+          currentIndex: controller.bottomNavIndex.value,
+          onTap: (index) => controller.changeBottomNavIndex(newIndex: index),
         ),
       );
 }
