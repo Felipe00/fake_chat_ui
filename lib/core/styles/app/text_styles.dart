@@ -17,4 +17,13 @@ class AppTextStyles {
 
   static TextStyle bodyEmphasis_88 = AppTypography.body
       .copyWith(color: AppColors.black_88, fontWeight: FontWeight.bold);
+
+static TextStyle caption_2 =
+      AppTypography.button.copyWith(color: AppColors.black_40);
+
+      static TextStyle caption_3 =
+      AppTypography.body.copyWith(color: AppColors.black_88, fontSize: 14);
+
+  static TextStyle caption =
+      AppTypography.caption.copyWith(color: AppColors.black_40);
 }
